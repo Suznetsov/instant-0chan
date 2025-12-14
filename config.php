@@ -56,8 +56,8 @@ if (!@$cached_config) {
 		$cf['KU_DBHOST']          = 'localhost'; // Database hostname. On SQLite this has no effect.
 		$cf['KU_DBDATABASE']      = '0chan'; // Database... database. On SQLite this will be the path to your database file. Secure this file.
 		$cf['KU_DBUSERNAME']      = 'root'; // Database username. On SQLite this has no effect.
-		$cf['KU_DBPASSWORD']      = ''; // Database password. On SQLite this has no effect.
-		$cf['KU_DBPREFIX']        = ''; // Database table prefix
+		$cf['KU_DBPASSWORD']      = 'NvS()iKaK@5'; // Database password. On SQLite this has no effect.
+		$cf['KU_DBPREFIX']        = '0chan'; // Database table prefix
 		$cf['KU_DBUSEPERSISTENT'] = false; // Use persistent connection to database
 		$cf['KU_DBCHARSET']       = 'utf8mb4';	// Database charset. utfmb4 is recommended, use utf8 if your version of mysql does not support it yet
 		$cf['KU_COLLATION']       = 'utf8mb4_general_ci'; // Database collation. utfmb4_general_ci is recommended, use utf8_general_ci if your version of mysql does not support it yet
@@ -93,7 +93,7 @@ if (!@$cached_config) {
 
 
 	// ---------------------------------- Userboards (aka 2.0) ----------------------------------
-		$cf['KU_20_BOARDSLIMIT'] = 5;	// How many 2.0 boards a user can create
+		$cf['KU_20_BOARDSLIMIT'] = 100;	// How many 2.0 boards a user can create
 		$cf['KU_20_CLOUDTIME'] = "-24 hours";
 		$cf['I0_20_LINK'] = "/?p=2.0"; // A link yo 2.0 boards page. "/?p=2.0" (default) will work with default index page; try "/register" if you use a custom index page
 		$cf['KU_20MAXLOGINPASS'] = 50; // Maximum login and password size for 2.0
@@ -210,7 +210,7 @@ if (!@$cached_config) {
 	// ------------------------------------- Paths and URLs -------------------------------------
 		// Main installation directory
 		$cf['KU_ROOTDIR']   = realpath(dirname(__FILE__))."/"; // Full system path of the folder containing kusaba.php, with trailing slash. The default value set here should be OK.. If you need to change it, you should already know what the full path is anyway.
-		$cf['KU_WEBFOLDER'] = '/'; // The path from the domain of the board to the folder which kusaba is in, including the trailing slash.  Example: "http://www.yoursite.com/misc/kusaba/" would have a $cf['KU_WEBFOLDER'] of "/misc/kusaba/"
+		$cf['KU_WEBFOLDER'] = "/board/"; // The path from the domain of the board to the folder which kusaba is in, including the trailing slash.  Example: "http://www.yoursite.com/misc/kusaba/" would have a $cf['KU_WEBFOLDER'] of "/misc/kusaba/"
 		// Two following values are set this way to make engine domain-agnostic. Change them in instance-config if you do not want to.
 		$cf['KU_WEBPATH']   = ''; // The path to the index folder of kusaba, without trailing slash. (http://yoursite.com or https://yoursite.com or just //yoursite.com for protocol-agnostic (flexible) behavior)
 		$cf['KU_DOMAIN']    = '.' . $_SERVER['HTTP_HOST']; // Used in cookies for the domain parameter.  Should be a period and then the top level domain, which will allow the cookies to be set for all subdomains.  For http://www.randomchan.org, the domain would be .randomchan.org; http://zachchan.freehost.com would be zach.freehost.com
